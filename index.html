@@ -16,19 +16,62 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
 
 </head>
 
 <body>
+
+<div class="btnFlotante">
+    <a class="btnCarrito" href="./carrito.html" target="_blank"><i class="fa-solid fa-cart-shopping"></i><span class="numero">0</span></a>
+    
+</div>
+
     <header id="header">
-        <h1>PLAYZONE - VIDEOGAME STORE</h1> 
-        <img class="carrito" src="images/carrito-de-compras.png" alt="carrito">
+
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <a href="./index.html" class="enlace">
+                <h1>PLAYZONE - VIDEOGAME STORE</h1> 
+            </a>
+            <ul>
+                <li><a href="./Pages/Sobre_mi.html">Videojuegos</a></li>
+                <li><a href="./Pages/Diseno.html">Consolas</a></li>
+                <li><a href="./Pages/arquitectura.html">Accesorios</a></li>
+                <li><a href="./Pages/Contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+
+        
+        
     </header>
+
+    <section class="videoJuegos">
+        <h2>Videojuegos</h2>
+        <div class="filtroJuegos">
+            <ul>
+                <li id="juegosTodos" class="categoria">Todos</li>
+                <li id="juegosAventura" class="categoria">Aventura</li>
+                <li id="juegosCarreras" class="categoria">Carreras</li>
+                <li id="juegosVersus" class="categoria">Versus</li>
+                <li id="juegosDeportes" class="categoria">Deportes</li>
+            </div>
+        </nav>
     <div id="contenedor" class="contenedor">
        
     </div>
 
+</section>
+
+
 
 <script src="script.js"></script>
+
+
 </body>
 </html>

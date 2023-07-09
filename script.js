@@ -188,10 +188,15 @@ const productosJuegos = [
 console.log(productosJuegos)
 
 let contenedor = document.getElementById("contenedor")
+let categoria = document.getElementsByClassName("categoria")
+let botonAgregar = document.querySelectorAll(".productoAgregar")
 
 console.log(contenedor)
+function cargarProductos(productosElegidos){
 
-productosJuegos.forEach((productoJuego)=>{
+    contenedor.innerHTML= "";
+
+productosElegidos.forEach((productoJuego)=>{
     console.log(productoJuego.nombre)
 
     let contenedorProd = document.createElement("div")
@@ -202,26 +207,102 @@ productosJuegos.forEach((productoJuego)=>{
             <div class="informacion">
                 <p>${productoJuego.nombre}</p>
                 <p class="Género">${productoJuego.genero}</p>
-                <p class="precio">${productoJuego.precio}</p>
-                <button id="btnComprar">Comprar</button>
+                <p class="precio">$${productoJuego.precio}</p>
+                <button class="btnComprar" id="btnComprar">Comprar</button>
             </div>
         </div>
 
         `
 
         contenedor.append(contenedorProd)
+
+
+        let juegosTodos =document.getElementById("juegosTodos")
+        juegosTodos.addEventListener("click", filtroTodos)
+
+        let juegosAventura =document.getElementById("juegosAventura")
+        juegosAventura.addEventListener("click", filtroAventura)
+
+        let juegosCarreras =document.getElementById("juegosCarreras")
+        juegosCarreras.addEventListener("click", filtroCarreras)
+
+        let juegosVersus =document.getElementById("juegosVersus")
+        juegosVersus.addEventListener("click", filtroVersus)
+
+        let juegosDeportes =document.getElementById("juegosDeportes")
+        juegosDeportes.addEventListener("click", filtroDeportes)
         
+       
+        const productosEnCarrito = [];
         
-        contenedor.append(contenedorProd)
 
-        let btnComprar = document.getElementById("btnComprar")
+        let btnComprar = document.getElementById("btnComprar");
 
-        btnComprar.addEventListener("click",agregarCarrito)
+        btnComprar.addEventListener("click", agregarCarrito)
 
-      
+        // btnComprar.addEventListener("click",() =>{
+        //     productosEnCarrito.push({
+        //         id: productoJuego.id,
+        //         img: productoJuego.imagen,
+        //         nombre: productoJuego.nombre,
+        //         precio: productoJuego.precio,
+        //     });
+        //     console.log(productosEnCarrito);
+        // });
 
-})
+
+});
+}
+
+function filtroTodos(){
+    const resultadoTodos = productosJuegos
+    // const resultado = productos.filter((el) => el.genero.includes("fútbol"))
+    console.log(resultadoTodos);
+    cargarProductos(resultadoTodos);
+}
+
+function filtroAventura(){
+    const resultadoAventura = productosJuegos.filter(producto => producto.genero.includes("Aventura"))
+    // const resultado = productos.filter((el) => el.genero.includes("fútbol"))
+    console.log(resultadoAventura);
+    cargarProductos(resultadoAventura);
+}
+
+function filtroCarreras(){
+    const resultadoCarreras = productosJuegos.filter(producto => producto.genero.includes("Carreras"))
+    // const resultado = productos.filter((el) => el.genero.includes("fútbol"))
+    console.log(resultadoCarreras);
+    cargarProductos(resultadoCarreras);
+}
+
+function filtroVersus(){
+    const resultadoVersus = productosJuegos.filter(producto => producto.genero.includes("Versus"))
+    // const resultado = productos.filter((el) => el.genero.includes("fútbol"))
+    console.log(resultadoVersus);
+    cargarProductos(resultadoVersus);
+}
+
+function filtroDeportes(){
+    const resultadoDeportes = productosJuegos.filter(producto => producto.genero.includes("Deportes"))
+    // const resultado = productos.filter((el) => el.genero.includes("fútbol"))
+    console.log(resultadoDeportes);
+    cargarProductos(resultadoDeportes);
+}
+
+
+cargarProductos(productosJuegos);
 
 function agregarCarrito(){
     console.log("agregar carrito")
 }
+
+
+
+
+
+// function agregarCarrito(){
+//     console.log("agregar carrito")
+    
+    
+//     }
+

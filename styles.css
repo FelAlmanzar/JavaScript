@@ -9,7 +9,106 @@ body {
     background-color: #141C29;
     padding-top: 80px;
 }
+
+.btnCarrito{
+    position: fixed;
+    width: 60px;
+    line-height: 55px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.75);
+    z-index: 100;
+}
+
+.btnCarrito:hover{
+    transform: scale(1.1);
+  transition: all 0.5s;
+}
+
+.numero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7ee00;
+    color: #000;
+    padding: 5px;
+    border-radius: 20px;
+    font-size: 15px;
+    text-align: center;
+}
+
+i{
+    color: #11294d;
+}
+
+nav {
+    background: #000;
+    height: 80px;
+    width: 100%;
+  }
+  
+  .enlace {
+    position: absolute;
+    padding: 10px 50px;
+  }
+  
+  .logo {
+    height: 60px;
+  }
+  
+  nav ul {
+    float: right;
+    margin-right: 20px;
+  }
+  nav ul li {
+    display: inline-block;
+    margin: 25px 5px 0 5px;
+  }
+  nav ul li a {
+    color: #a7aaaa;
+    font-size: 15px;
+    font-family: "Quicksand", sans-serif;
+    font-weight: lighter;
+    padding: 7px 13px;
+    border-radius: 3px;
+  }
+  
+  li a.active, li a:hover {
+    color: #f7ee00;
+    transition: 0.5s;
+    text-decoration: none;
+  }
+  
+  .checkbtn {
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+  }
+  
+  #check {
+    display: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  a:hover {
+    color: #f7ee00;
+    text-decoration: none;
+  }
+
 h1{
+    color: #fff;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     margin: 30px 0px;
@@ -31,20 +130,38 @@ header{
     position: fixed;
     width: 100%;
 }
-.scroll{
-    background-color: aliceblue;
-    box-shadow: .1rem .2rem .3rem #333;
-}
-.scroll img{
-    filter: invert(15%);
-}           
+          
 header h1{
-    color: #141C29;
+    color: white;
 }
-.carrito{
-    width: 45px;
-    height: auto;
+
+.videoJuegos h2{
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 50px;
+    margin: 30px 0px;
 }
+
+.filtroJuegos{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.filtroJuegos ul li {
+        display: inline-block;
+        margin: 0 5px 0 5px;
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+        padding: 30px 0;
+        color: #586565;
+}
+
+.filtroJuegos ul li:hover{
+    color: #fff;
+    cursor: pointer;
+}
+
 .contenedor{
     display: flex;
     justify-content: center;
@@ -96,3 +213,145 @@ header h1{
 .informacion button:hover{
     background-color: #2D4263;
 }
+
+/*Carrito*/
+.contenedor-carrito{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.carritoVacio{
+    color: #fff;
+    display: none;
+}
+
+.carritoProductos{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.carritoProducto{
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #586565;
+    color: #fff;
+    padding: .5rem;
+    border-radius: 1rem;
+}
+
+.carritoProducto h3{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+}
+
+.carritoProducto p{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+}
+
+.carritoProducto img{
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+.carritoProducto small{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+}
+
+.carritoProducto .eliminar{
+    border: 0;
+    background-color: transparent;
+    color: #11294d;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.carritoAcciones{
+    display: flex;
+    justify-content: space-around;
+}
+
+.vaciarCarrito{
+    border: 0;
+    background-color: #586565;
+    padding: 1rem;
+    border-radius: 1rem;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.nright{
+    display: flex;
+}
+
+.totalCarrito{
+    display: flex;
+    border: 0;
+    background-color: #586565;
+    padding: 1rem;
+    border-radius: 1rem;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+
+}
+
+
+
+.comprarAhora{
+    border: 0;
+    background-color: #586565;
+    padding: 1rem;
+    border-radius: 1rem;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.disabled{
+    display: none;
+}
+
+
+
+@media (max-width: 858px) {
+
+    header h1{
+        font-size: 15px;
+    }
+    .checkbtn {
+      display: block;
+    }
+    nav ul {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.98);
+      top: 80px;
+      left: -100%;
+      text-align: center;
+      transition: all 0.5s;
+      z-index: 3;
+    }
+    nav ul li {
+      display: block;
+      margin: 50px 0;
+      line-height: 30px;
+    }
+    nav ul li a {
+      font-size: 20px;
+    }
+    li a:hover, li a.active {
+      background: none;
+      color: #fff;
+    }
+    #check:checked ~ ul {
+      left: 0;
+    }
+}
+

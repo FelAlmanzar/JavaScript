@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <title>Carrito de compras</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+</head>
+
+<body>
+
+    <div class="btnFlotante">
+        <a class="btnCarrito" href="./carrito.html" target="_blank"><i class="fa-solid fa-cart-shopping"></i><span class="numero">0</span></a>
+        
+    </div>
+    
+
+   
+    <section class="videoJuegos">
+        <h2>Carrito de Compras</h2>
+        <div class="filtroJuegos">
+            <ul>
+                <li id="juegosTodos" class="categoria"><a href="./index.html">volver a la tienda</a></li>
+               
+            </div>
+        </nav>
+    <div id="contenedor-carrito" class="contenedor-carrito">
+
+       <p class="carritoVacio">Tu carrito está vacío <i class="fa-solid fa-face-sad-tear"></i></p>
+
+       <div class="carritoProductos">
+            <div class="carritoProducto">
+                <img src="./images/Fifa-23.webp" alt="">
+                <div class="carritoNombre">
+                    <small>Nombre</small>
+                    <h3>Fifa 23</h3>
+                </div>
+
+                <div class="carritoPrecio">
+                    <small>precio</small>
+                    <p>$200000</p>
+                </div>
+
+                <div class="carritoSubtotal">
+                    <small>subtotal</small>
+                    <p>$200000</p>
+                </div>
+                <button class="eliminar"><i class="fa-solid fa-trash-can"></i></button>
+            </div>
+
+       </div>
+
+       <div class="carritoAcciones">
+        <div class="nleft">
+            <button class="vaciarCarrito">Vaciar carrito</button>
+        </div>
+        <div class="nright">
+        <div class="totalCarrito">
+            <p>Total:</p>
+            <p id="total">$200000</p>
+        </div>
+    </div>
+        <button class="comprarAhora">Comprar Ahora</button>
+       </div>
+    </div>
+
+</section>
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+</html>
