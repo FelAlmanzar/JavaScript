@@ -74,6 +74,25 @@
 
 // alert("Gracias por su compra")
 
+let contenedor = document.getElementById("contenedor")
+
+document.addEventListener('DOMContentLoaded', () =>{
+    lista()
+})
+
+const lista = async () => {
+    try{
+    const res = await fetch('data.json')
+    const data = await res.json()
+    console.log(data)
+} catch (error){
+    console.log (error)
+}
+
+}
+
+
+
 
 const productosJuegos = [
     {
@@ -187,7 +206,7 @@ const productosJuegos = [
 
 console.log(productosJuegos)
 
-let contenedor = document.getElementById("contenedor")
+
 let categoria = document.getElementsByClassName("categoria")
 let botonAgregar = document.querySelectorAll(".productoAgregar")
 
@@ -238,21 +257,25 @@ productosElegidos.forEach((productoJuego)=>{
 
         let btnComprar = document.getElementById("btnComprar");
 
+        
+
         btnComprar.addEventListener("click", agregarCarrito)
 
-        // btnComprar.addEventListener("click",() =>{
-        //     productosEnCarrito.push({
-        //         id: productoJuego.id,
-        //         img: productoJuego.imagen,
-        //         nombre: productoJuego.nombre,
-        //         precio: productoJuego.precio,
-        //     });
-        //     console.log(productosEnCarrito);
-        // });
+        btnComprar.addEventListener("click",() =>{
+            productosEnCarrito.push({
+                id: productoJuego.id,
+                img: productoJuego.imagen,
+                nombre: productoJuego.nombre,
+                precio: productoJuego.precio,
+            });
+            console.log(productosEnCarrito);
+        });
 
 
 });
 }
+
+cargarProductos(productosJuegos);
 
 function filtroTodos(){
     const resultadoTodos = productosJuegos
@@ -290,19 +313,8 @@ function filtroDeportes(){
 }
 
 
-cargarProductos(productosJuegos);
+
 
 function agregarCarrito(){
     console.log("agregar carrito")
 }
-
-
-
-
-
-// function agregarCarrito(){
-//     console.log("agregar carrito")
-    
-    
-//     }
-
